@@ -9,12 +9,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)    # Not the final implementation!
-    if @user.save
-      log_in @user
-      # Handle a successful save.
-      redirect_to @user
+    user = User.find_by(email: params[:session][:email].downcase)
+    if user && user.authenticate(params[:session][:password])
+      log_in user
+      redirect_to user
     else
+      flash.now[:danger] = 'Invalid email/password combination'
       render 'new'
     end
   end
