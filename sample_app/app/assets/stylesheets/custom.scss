@@ -51,6 +51,15 @@ h2 {
   color: $light-gray;
 }
 
+h3 {
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $light-gray;
+}
+
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -130,4 +139,19 @@ input {
   .form-control {
     color: $state-danger-text;
   }
+}
+
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
 }

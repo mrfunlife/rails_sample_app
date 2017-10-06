@@ -6,19 +6,33 @@
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_message' %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
 
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
+        <%= f.label :email %>
+        <%= f.email_field :email, class: 'form-control' %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+        <%= f.label :birthday %>
+        <%= f.text_field :birth_day, class: 'form-control' %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
+        <%= f.label :phoneNumber %>
+        <%= f.text_field :phone_number, class: 'form-control' %>
 
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
+        <%= f.label :sex %> <br />
+        <%= f.label :gender_male, 'Boy' %>  <%= f.radio_button :sex, 1 %>
+        <%= f.label :gender_female, 'Girl' %> <%= f.radio_button :sex, 0 %><br />
+
+
+        <%= f.label :address %>
+        <%= f.text_field :address, class: 'form-control' %>
+
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-control' %>
+
+        <%= f.label :password_confirmation, "Confirmation" %>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+        <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
