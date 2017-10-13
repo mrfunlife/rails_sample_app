@@ -1,38 +1,68 @@
 <% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
+
+<div class="row w3-padding left-20">
+  <h1>Sign up</h1>
+  <br class="col-md-6 col-md-offset-3">
     <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_message' %>
+        <%= render 'shared/error_message' %>
+        <div class="form-group">
+          <%= f.label :name %>
+        </div>
+        <div class="form-group">
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
 
-        <%= f.label :name %>
-        <%= f.text_field :name, class: 'form-control' %>
+        <div class="form-group">
+          <%= f.label :email %>
+        </div>
+        <div class="form-group">
+          <%= f.email_field :email, class: 'form-control' %>
+        </div>
 
-        <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-control' %>
-
-        <%= f.label :birthday %>
-        <%= f.text_field :birth_day, class: 'form-control' %>
-
-        <%= f.label :phoneNumber %>
-        <%= f.text_field :phone_number, class: 'form-control' %>
-
-        <%= f.label :sex %> <br />
-        <%= f.label :gender_male, 'Boy' %>  <%= f.radio_button :sex, 1 %>
-        <%= f.label :gender_female, 'Girl' %> <%= f.radio_button :sex, 0 %><br />
-
-
-        <%= f.label :address %>
-        <%= f.text_field :address, class: 'form-control' %>
-
-        <%= f.label :password %>
-        <%= f.password_field :password, class: 'form-control' %>
-
-        <%= f.label :password_confirmation, "Confirmation" %>
-        <%= f.password_field :password_confirmation, class: 'form-control' %>
-
-        <%= f.submit "Create my account", class: "btn btn-primary" %>
+        <div class="form-group">
+          <%= f.label :birthday %>
+        </div>
+        <div class="form-group">
+          <%= f.text_field :birth_day, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :phoneNumber %>
+        </div>
+        <div class="form-group">
+          <%= f.text_field :phone_number, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :sex %> <br/>
+        </div>
+        <div class="form-group">
+          <%= f.label :gender_male, 'Boy' %>  <%= f.radio_button :sex, 1 %>
+        </div>
+        <div class="form-group">
+          <%= f.label :gender_female, 'Girl' %> <%= f.radio_button :sex, 0 %><br/>
+        </div>
+        <div class="form-group">
+          <%= f.label :address %>
+        </div>
+        <div class="form-group">
+          <%= f.text_field :address, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password %>
+        </div>
+        <div class="form-group">
+          <%= f.password_field :password, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password_confirmation, "Confirmation" %>
+        </div>
+        <div class="form-group">
+          <%= f.password_field :password_confirmation, class: 'form-control' %>
+        </div>
+        <br></br>
+        <div class="form-group">
+          <%= f.submit "Create my account", class: "btn btn-primary" %>
+        </div>
     <% end %>
   </div>
 </div>

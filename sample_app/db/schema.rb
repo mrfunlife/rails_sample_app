@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171006131042) do
+ActiveRecord::Schema.define(version: 20171009135359) do
+
+  create_table "ckeditor_assets", force: :cascade do |t|
+    t.string   "data_file_name",               null: false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.string   "type",              limit: 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["type"], name: "index_ckeditor_assets_on_type"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
@@ -31,6 +43,7 @@ ActiveRecord::Schema.define(version: 20171006131042) do
     t.string   "phone_number"
     t.integer  "sex"
     t.string   "address"
+    t.boolean  "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

@@ -1,21 +1,25 @@
 <% provide(:title, @user.name) %>
 
-<div class="row">
+<div class="row w3-padding left-16">
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
-      <h2>Birthday: <%= @user.birth_day %></h2>
-      <h2>PhoneNumber: <%= @user.phone_number %></h2>
-      <h2>Address: <%= @user.address %></h2>
+      <h3>Birthday: <%= @user.birth_day %></h3>
+      <h3>PhoneNumber: <%= @user.phone_number %></h3>
+      <h3>Address: <%= @user.address %></h3>
       <% if @user.sex == 1 %>
-          <h2>Sex: Boy</h2>
+          <h3>Sex: Boy</h3>
       <% else %>
-          <h2>Sex: Girl</h2>
+          <h3>Sex: Girl</h3>
       <% end %>
-      </h2>
+      </h1>
     </section>
   </aside>
+  <br>
+  <div class="form-group">
+  <b><%= link_to "Update Profile",  edit_user_path(current_user) %></b>
+  </div>
 </div>

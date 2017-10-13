@@ -1,38 +1,38 @@
 <header>
-  <div class="container">
-    <%= link_to "sample app", root_path, id: "logo" %>
-  <h3>
-    <% if logged_in? %>
-      <% @user = current_user %>
-      Xin chào thành viên:  <%= @user.name %>
-    <% else %>
-      <p>Bạn không phải là thành viên. Vui lòng đăng ký.</p>
-    <% end %>
-  </h3>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Help", help_path %></li>
-        <% if logged_in? %>
-            <li><%= link_to "Users", '#' %></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Account <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li><%= link_to "Profile", current_user %></li>
-                <li><%= link_to "Settings", '#' %></li>
-                <li><%= link_to "NewPost", posts_path %></li>
-                <li class="divider"></li>
-                <li>
-                  <%= link_to "Log out", logout_path, method: :delete %>
-                </li>
-              </ul>
-            </li>
-        <% else %>
-            <li><%= link_to "Log in", login_path %></li>
-        <% end %>
-      </ul>
-    </nav>
+<nav class="w3-sidebar w3-bar-block w3-card-2 w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:20%;min-width:300px" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()"
+     class="w3-bar-item w3-button">Close Menu</a>
+  <% if logged_in? %>
+      <div class="w3-bar-item w3-button">  <%= link_to "Home", root_path  %> </div>
+      <div class="w3-bar-item w3-button">  <%= link_to "Profile", current_user  %> </div>
+      <div class="w3-bar-item w3-button">  <%= link_to "New Post",posts_new_path %> </div>
+      <div class="w3-bar-item w3-button"> <%= link_to "Log out", logout_path, method: :delete %> </div>
+      <div class="w3-bar-item w3-button"><%= link_to "Update Profile",  edit_user_path(current_user) %> </div>
+  <% else %>
+      <div class="w3-bar-item w3-button">  <%= link_to "Home", root_path  %> </div>
+      <div class="w3-bar-item w3-button">  <%= link_to "Log in", login_path %> </div>
+      <div class="w3-bar-item w3-button"><%= link_to "Sign up now!", users_new_path %> </div>
+  <% end %>
+
+  <div class="w3-bar-item w3-button">  <%= link_to "Help", help_path  %> </div>
+  <div class="w3-bar-item w3-button">  <%= link_to "About", about_path  %> </div>
+</nav>
+
+<!-- Top menu -->
+<div>
+  <div class="w3-light-grey w3-xlarge" style="max-width:1400px;margin:auto">
+    <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
+    <div class="w3-right w3-padding-16 w3-margin right-16">
+      <% if logged_in? %>
+          <% @user = current_user %>
+          <h6> <i>Thành viên:  <%= @user.name %> </i> </h6>
+      <% else %>
+          <h6> <i>Bạn chưa đăng nhập? </i> </h6>
+      <% end %>
+    </div>
+
+    <div class="w3-center "><h3><b>MY BLOG</b></h3></div>
+    <h6><i><div class="w3-center"><%= link_to "Wellcome ManchesterUnited <3", root_path, id: "logo" %></i></h6></div></h6>
   </div>
+</div>
 </header>

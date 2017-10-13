@@ -1,0 +1,10 @@
+<% provide(:title, "All Users") %>
+<div class="w3-padding left-20">
+  <div><h3>Danh Sách User </h3></div>
+<% @users.each do |user| %>
+      <div class="form-group">
+        <h6> <%=user.id %> --- <%=user.name %> --- <%= user.email %>   </h6>
+      </div>
+      <br>
+<% end %>
+</div>

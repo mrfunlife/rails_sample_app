@@ -1,0 +1,10 @@
+<% provide(:title, "All Posts") %>
+<div class="w3-padding left-20">
+  <div><h3>Danh Sách Posts </h3></div>
+  <% @posts.each do |post| %>
+      <div class="form-group">
+        <h6> <%=post.id %> --- <%=post.title %> </h6>
+      </div>
+      <br>
+  <% end %>
+</div>
