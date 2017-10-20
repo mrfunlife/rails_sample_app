@@ -1,25 +1,18 @@
 <% provide(:title, @user.name) %>
 
 <div class="row w3-padding left-16">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-      <h3>Birthday: <%= @user.birth_day %></h3>
-      <h3>PhoneNumber: <%= @user.phone_number %></h3>
-      <h3>Address: <%= @user.address %></h3>
-      <% if @user.sex == 1 %>
-          <h3>Sex: Boy</h3>
-      <% else %>
-          <h3>Sex: Girl</h3>
-      <% end %>
-      </h1>
-    </section>
-  </aside>
-  <br>
-  <div class="form-group">
-  <b><%= link_to "Update Profile",  edit_user_path(current_user) %></b>
+
+  <div class="col-md-4 col"  >
+    <div><img src="https://seeklogo.com/images/M/manchester-united-logo-F14DA1FCCD-seeklogo.com.png" class="img-rounded avartar" alt=""></div>
+    <div class="info_text_name center"><%= @user.name  %></div>
+    <div class="info_text_email center"><%= @user.email  %></div>
+  </div>
+  <div class="col-md-8">
+    <% if @user.microposts.any? %>
+        <%= will_paginate @microposts %>
+        <ol class="microposts">
+          <%= render @microposts%>
+        </ol>
+    <% end %>
   </div>
 </div>
