@@ -1,0 +1,4 @@
+<img src="https://seeklogo.com/images/M/manchester-united-logo-F14DA1FCCD-seeklogo.com.png" class="img-rounded avartar" alt="" width="50" height="50">
+<h1><%= current_user.name %></h1>
+<span><%= link_to "view my profile", current_user %></span>
+<span><%= pluralize(current_user.microposts.count, "micropost") %></span>

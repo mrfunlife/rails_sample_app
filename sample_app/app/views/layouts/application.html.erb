@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
   <head>
     <title><%= full_title(yield(:title)) %></title>
     <meta charset="UTF-8">
@@ -33,4 +34,40 @@
       }
   </script>
   </body>
+=======
+<head>
+  <%= csrf_meta_tags %>
+  <title><%= full_title(yield(:title)) %></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet" href="https://fonts.google.com/specimen/Slabo+27px">
+
+
+<body class="w3-light-grey">
+<%= render 'layouts/header' %>
+<div class="w3-content" style="max-width:1400px">
+  <div class="container">
+    <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>">
+          <%= message %></div>
+    <% end %>
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+  </div>
+</div>
+
+<script>
+    // Script to open and close sidebar
+    function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+    }
+
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+    }
+</script>
+</body>
+>>>>>>> UI
 </html>

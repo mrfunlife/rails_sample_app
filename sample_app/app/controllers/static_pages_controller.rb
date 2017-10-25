@@ -1,7 +1,8 @@
 class StaticPagesController < ApplicationController
   def home
-    @posts = Post.all
-    @users = User.paginate(:page => params[:page], :per_page => 5)
+    @users = User.paginate(page: params[:page], per_page: 5)
+    @microposts = Micropost.all
+    @user = current_user
   end
 
   def help

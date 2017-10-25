@@ -1,0 +1,21 @@
+<div class="row">
+<div class="col-md-8">
+<li id="micropost-<%= micropost.id %>">
+  <span class="title">
+  <%= link_to micropost.title, micropost %></span>
+  <div>
+    <span class="content"><%= micropost.body %></span>
+  </div>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+  </span>
+</li>
+</div>
+
+  <div class="col-md-4">
+    <li id="micropost-<%= micropost.id %>">
+      <img src= "<%= micropost.urlImage %>" class="img-responsive image_url"></li>
+    </li>
+  </div>
+
+</div>

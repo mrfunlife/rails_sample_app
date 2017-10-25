@@ -1,0 +1,12 @@
+<% provide :title, "Show MicroPost" %>
+
+<div class="w3-card-4 w3-margin w3-white">
+  <img src="<%= @micropost.urlImage %>" alt="Nature" style="width:100%">
+  <div class="w3-container">
+    <h3><b><%= @micropost.title %></b></h3>
+    <h6><span class="w3-opacity">April 7, 2014</span></h6>
+  </div>
+  <div class="w3-container text-sezi_default">
+    <p><%= @micropost.body %></p>
+  </div>
+</div>

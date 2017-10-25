@@ -1,0 +1,14 @@
+<%= form_for(@micropost) do |f| %>
+    <%= render 'shared/error_message', object: f.object %>
+    <div class="field margin-top-default">
+      <%= f.text_field :title, placeholder: "Title..." %>
+    </div>
+    <div class="field margin-top-default">
+      <%= f.text_area :body, placeholder: "Content..." %>
+    </div>
+
+    <div class="field margin-top-default">
+      <%= f.text_field :urlImage, placeholder: "Image url: ..." %>
+    </div>
+    <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>

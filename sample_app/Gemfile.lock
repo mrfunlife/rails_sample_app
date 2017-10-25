@@ -51,10 +51,13 @@ GEM
       will_paginate
     builder (3.2.3)
     byebug (9.1.0)
+<<<<<<< HEAD
     carrierwave (1.2.1)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
+=======
+>>>>>>> UI
     ckeditor (4.2.4)
       cocaine
       orm_adapter (~> 0.5.0)
@@ -196,13 +199,19 @@ DEPENDENCIES
   bootstrap-sass (= 3.3.7)
   bootstrap-will_paginate (= 1.0.0)
   byebug
+<<<<<<< HEAD
   carrierwave (~> 1.0)
+=======
+>>>>>>> UI
   ckeditor (~> 4.2.4)
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
+<<<<<<< HEAD
   mini_magick
+=======
+>>>>>>> UI
   pg (= 0.20.0)
   puma (~> 3.0)
   rails (~> 5.0.6)
